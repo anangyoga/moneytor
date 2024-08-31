@@ -3,7 +3,8 @@ const BalanceCard = async () => {
   const { data } = await response.json();
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 flex-1">
+      <p className="text-sm font-medium">All Transactions</p>
       {data.map((item) => (
         <div className="bg-secondary rounded-md p-3" key={item._id}>
           <div className="flex justify-between items-center">
