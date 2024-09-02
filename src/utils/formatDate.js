@@ -3,7 +3,7 @@ export const formateDate = (timestamp) => {
 
   const options = { year: "numeric", month: "long", day: "numeric" };
 
-  const formattedDate = date.toLocaleDateString("en-US", options);
+  const formattedDate = date?.toLocaleDateString("en-US", options);
 
   return formattedDate;
 };

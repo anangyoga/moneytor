@@ -42,6 +42,7 @@ const BalanceTransaction = () => {
     <div className="bg-tertiary p-2.5 rounded-md">
       <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
         <input
+          required
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           type="text"
@@ -49,6 +50,7 @@ const BalanceTransaction = () => {
           className="placeholder:italic placeholder:text-gray-300 placeholder:tracking-wide block bg-transparent text-white font-medium w-full border-none rounded-sm py-2 px-3 shadow-sm focus:outline-none focus:border-none sm:text-sm"
         />
         <input
+          required
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           type="number"
