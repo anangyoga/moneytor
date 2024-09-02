@@ -1,5 +1,5 @@
 const BalanceCard = async () => {
-  const response = await fetch(process.env.APP_BACKEND_DB);
+  const response = await fetch(process.env.NEXT_PUBLIC_APP_BACKEND_DB);
   const { data } = await response.json();
 
   return (
