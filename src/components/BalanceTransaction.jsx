@@ -60,7 +60,7 @@ const BalanceTransaction = () => {
         <div className="flex gap-2">
           <input checked={isExpense} onChange={(e) => setIsExpense(e.target.checked)} type="checkbox" name="isExpense" id="isExpense" />
           <label htmlFor="isExpense" className="text-sm font-light">
-            Expense
+            Is it expense?
           </label>
         </div>
         <input type="submit" value="Add Transaction" className="bg-info px-4 py-2 cursor-pointer font-medium text-black rounded-sm" />
