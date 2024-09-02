@@ -1,8 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const BalanceTransaction = () => {
+  const router = useRouter();
+
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [isExpense, setIsExpense] = useState(false);
@@ -31,6 +34,8 @@ const BalanceTransaction = () => {
     setDescription("");
     setAmount("");
     setIsExpense(false);
+
+    router.refresh();
   };
 
   return (
