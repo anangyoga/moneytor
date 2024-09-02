@@ -3,7 +3,7 @@
 import { formateDate } from "@/utils/formatDate";
 import { useRouter } from "next/navigation";
 
-export const BalanceItem = ({ id, description, amount, createdAt }) => {
+export const BalanceItem = ({ id, description, amount, createdAt, isExpense }) => {
   const router = useRouter();
 
   const handleDelete = async (id) => {
@@ -22,7 +22,9 @@ export const BalanceItem = ({ id, description, amount, createdAt }) => {
     <div className="bg-secondary rounded-md p-3 flex flex-col justify-between">
       <div className="flex justify-between items-center">
         <p className="font-semibold">{description}</p>
-        <p className="font-semibold">Rp {amount}</p>
+        <p className="font-semibold">
+          {isExpense ? <span className="text-danger">-</span> : <span className="text-green-500">+</span>} Rp {amount}
+        </p>
       </div>
       <p className="text-gray-400 font-thin text-sm">{formateDate(createdAt)}</p>
       <button className="self-end text-sm text-danger" onClick={() => handleDelete(id)}>
