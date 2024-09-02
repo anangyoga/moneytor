@@ -1,6 +1,7 @@
 "use client";
 
 import { formateDate } from "@/utils/formatDate";
+import { formatNumber } from "@/utils/formatNumber";
 import { useRouter } from "next/navigation";
 
 export const BalanceItem = ({ id, description, amount, createdAt, isExpense }) => {
@@ -23,7 +24,7 @@ export const BalanceItem = ({ id, description, amount, createdAt, isExpense }) =
       <div className="flex justify-between items-center">
         <p className="font-semibold">{description}</p>
         <p className="font-semibold">
-          {isExpense ? <span className="text-danger">-</span> : <span className="text-green-500">+</span>} Rp {amount}
+          {isExpense ? <span className="text-danger">-</span> : <span className="text-green-500">+</span>} Rp {formatNumber(amount)}
         </p>
       </div>
       <p className="text-gray-400 font-thin text-sm">{formateDate(createdAt)}</p>

@@ -1,3 +1,5 @@
+import { formatNumber } from "@/utils/formatNumber";
+
 const Balance = async () => {
   const response = await fetch(process.env.NEXT_PUBLIC_APP_BACKEND_DB, {
     cache: "no-store",
@@ -17,11 +19,11 @@ const Balance = async () => {
       <div className="flex flex-col gap-3 bg-secondary p-2.5 rounded-md sm:flex-row sm:items-center sm:justify-between sm:gap-0">
         <div>
           <p className="font-thin text-sm text-info">Current balance:</p>
-          <h2 className="font-bold text-xl tracking-wide">Rp {totalAmount},-</h2>
+          <h2 className="font-bold text-xl tracking-wide">Rp {formatNumber(totalAmount)}</h2>
         </div>
         <div>
           <p className="font-thin text-sm text-danger">You've spent:</p>
-          <h3 className="font-bold text-xl tracking-wide">Rp {totalSpent},-</h3>
+          <h3 className="font-bold text-xl tracking-wide">Rp {formatNumber(totalSpent)}</h3>
         </div>
       </div>
     </div>
