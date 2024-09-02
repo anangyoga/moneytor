@@ -1,10 +1,8 @@
+import { getData } from "@/actions/getData";
 import { BalanceItem } from "./BalanceItem";
 
 const BalanceCard = async () => {
-  const response = await fetch(process.env.NEXT_PUBLIC_APP_BACKEND_DB, {
-    cache: "no-store",
-  });
-  const { data } = await response.json();
+  const data = await getData();
 
   return (
     <div className="flex flex-col gap-3 flex-1">
